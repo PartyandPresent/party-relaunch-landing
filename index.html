@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Personalized Birthday Party Bundles — Party &amp; Presents</title>
+<title>Personalized Celebration Bundles — Party &amp; Presents</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Quicksand:wght@400;500;600;700&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1D2025; --pink: #FF559C; --sky: #A9D7EC; --body: #5B6472; --line: #E8E9EB;
+    --ink: #1D2025; --pink: #FF559C; --sky: #D8F2FE; --body: #5B6472; --line: #E8E9EB;
     --heading-font: 'DM Serif Text', serif; --body-font: 'Quicksand', sans-serif;
     --starter: #C25B6E; --starter-bg: #FBEFF1;
     --complete: #2F5D3A; --complete-bg: #EEF3EC;
@@ -25,8 +25,11 @@
   }
 
   /* ---------- Header ---------- */
-  .pp-header { background: #fff; border-bottom: 1px solid var(--line); padding: 16px 24px; text-align: center; }
-  .pp-header__logo { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 22px; color: var(--ink); }
+  .pp-header { background: #fff; border-bottom: 1px solid var(--line); padding: 10px 24px; text-align: center; }
+  .pp-header__logo {
+    display: block; width: 92.4px; height: 71.4px; margin: 0 auto;
+    object-fit: contain;
+  }
 
   /* ---------- Hero ---------- */
   .pp-hero { background: var(--sky); padding: 56px 24px; text-align: center; }
@@ -44,10 +47,23 @@
   }
   .pp-hero__note { font-family: var(--body-font); font-size: 13px; color: var(--body); margin: 14px 0 0; }
 
-  /* ---------- Bundle photo strip ---------- */
-  .pp-photos { padding: 48px 24px; background: #fff; }
-  .pp-photos__grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .pp-photos__item { aspect-ratio: 1; font-size: 14px; }
+  /* ---------- Bundle gallery ---------- */
+  .pp-photos { padding: 56px 24px; background: #fff; overflow: hidden; }
+  .pp-photos__wrapper { max-width: 1100px; margin: 0 auto; }
+  .pp-photos__header { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 22px; }
+  .pp-photos__eyebrow { color: var(--pink); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; margin: 0 0 6px; text-transform: uppercase; }
+  .pp-photos__title { font-family: var(--heading-font); font-size: 30px; margin: 0; }
+  .pp-photos__controls { display: flex; gap: 8px; }
+  .pp-photos__control {
+    display: inline-grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 50%;
+    background: #fff; color: var(--ink); cursor: pointer; font-size: 24px; line-height: 1; transition: background 0.15s ease, color 0.15s ease;
+  }
+  .pp-photos__control:hover, .pp-photos__control:focus-visible { background: var(--pink); border-color: var(--pink); color: #fff; outline: none; }
+  .pp-photos__viewport { overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: inline mandatory; -ms-overflow-style: none; scrollbar-width: none; }
+  .pp-photos__viewport::-webkit-scrollbar { display: none; }
+  .pp-photos__grid { display: flex; gap: 20px; padding: 2px 2px 16px; }
+  .pp-photos__item { flex: 0 0 calc((100% - 40px) / 3); min-width: 0; margin: 0; scroll-snap-align: start; }
+  .pp-photos__image { display: block; width: 100%; aspect-ratio: 1; border-radius: 18px; object-fit: cover; object-position: center; }
 
   /* ---------- How it works ---------- */
   .pp-how { background: #F5EFE7; padding: 48px 24px; }
@@ -175,7 +191,11 @@
 
   @media screen and (max-width: 800px) {
     .pp-hero__title { font-size: 30px; }
-    .pp-photos__grid { grid-template-columns: 1fr; }
+    .pp-photos { padding: 40px 16px; }
+    .pp-photos__header { align-items: center; margin-bottom: 18px; }
+    .pp-photos__title { font-size: 26px; }
+    .pp-photos__controls { display: none; }
+    .pp-photos__item { flex-basis: min(82vw, 340px); }
     .pp-how__wrapper { grid-template-columns: 1fr 1fr; }
     .pp-how__title { grid-column: 1 / -1; text-align: center; }
     .pp-tiers__grid { grid-template-columns: 1fr; }
@@ -190,47 +210,85 @@
 <body>
 
 <div class="pp-header">
-  <span class="pp-header__logo">party &amp; presents</span>
+  <img class="pp-header__logo" src="assets/Final%20Logo.png" alt="Party &amp; Presents">
 </div>
 
 <div class="pp-hero">
   <span class="pp-hero__eyebrow">Local Launch Offer — St. John's, NL</span>
-  <h1 class="pp-hero__title">Personalized birthday bundles, made just for <em>your</em> little one.</h1>
-  <p class="pp-hero__subtitle">Choose a theme, pick your package, and tell us their name — we'll design and coordinate the rest. No stress, no guessing, just a beautiful party.</p>
+  <h1 class="pp-hero__title">Personalized party bundles, made for <em>your</em> celebration.</h1>
+  <p class="pp-hero__subtitle">Choose a design, pick your package, and share the details — we'll coordinate the rest. No stress, no guessing, just a beautiful celebration.</p>
   <a href="#order-form" class="pp-hero__cta">Start My Party Order →</a>
   <p class="pp-hero__note">We're relaunching — this offer is available for a limited time while we finish rebuilding our full site.</p>
 </div>
 
-<div class="pp-photos">
-  <div class="pp-photos__grid">
-    <div class="pp-placeholder pp-photos__item">One Silly Goose — Bundle Photo</div>
-    <div class="pp-placeholder pp-photos__item">Two Fast — Bundle Photo</div>
-    <div class="pp-placeholder pp-photos__item">Little Pumpkin — Bundle Photo</div>
+<section class="pp-photos" aria-labelledby="gallery-title">
+  <div class="pp-photos__wrapper">
+    <div class="pp-photos__header">
+      <div>
+        <p class="pp-photos__eyebrow">Made to celebrate</p>
+        <h2 class="pp-photos__title" id="gallery-title">Party bundles to love</h2>
+      </div>
+      <div class="pp-photos__controls" aria-label="Gallery controls">
+        <button class="pp-photos__control" type="button" data-gallery-direction="previous" aria-label="Show previous bundles" aria-controls="bundle-gallery">&#8592;</button>
+        <button class="pp-photos__control" type="button" data-gallery-direction="next" aria-label="Show next bundles" aria-controls="bundle-gallery">&#8594;</button>
+      </div>
+    </div>
+    <div class="pp-photos__viewport" id="bundle-gallery" tabindex="0" aria-label="Party bundle gallery">
+      <div class="pp-photos__grid">
+        <figure class="pp-photos__item">
+          <img class="pp-photos__image" src="assets/gallery/vintage-plane-table-setup.png" alt="Vintage airplane party table setup">
+        </figure>
+        <figure class="pp-photos__item">
+          <img class="pp-photos__image" src="assets/gallery/unicorn-party-details.png" alt="Unicorn party details">
+        </figure>
+        <figure class="pp-photos__item">
+          <img class="pp-photos__image" src="assets/gallery/superhero-party-straws.png" alt="Superhero party drink details" loading="lazy">
+        </figure>
+        <figure class="pp-photos__item">
+          <img class="pp-photos__image" src="assets/gallery/superhero-party-table.png" alt="Superhero party table setup" loading="lazy">
+        </figure>
+        <figure class="pp-photos__item">
+          <img class="pp-photos__image" src="assets/gallery/soccer-party-table.png" alt="Soccer party table setup" loading="lazy">
+        </figure>
+        <figure class="pp-photos__item">
+          <img class="pp-photos__image" src="assets/gallery/train-party-table.png" alt="Train party table setup" loading="lazy">
+        </figure>
+        <figure class="pp-photos__item">
+          <img class="pp-photos__image" src="assets/gallery/building-block-party-details.png" alt="Building block party details" loading="lazy">
+        </figure>
+        <figure class="pp-photos__item">
+          <img class="pp-photos__image" src="assets/gallery/racing-party-details.png" alt="Racing party details" loading="lazy">
+        </figure>
+        <figure class="pp-photos__item">
+          <img class="pp-photos__image" src="assets/gallery/one-silly-goose-table-setup.png" alt="One Silly Goose party table setup" loading="lazy">
+        </figure>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
 <div class="pp-how">
   <div class="pp-how__wrapper">
     <p class="pp-how__title">How It Works</p>
     <div>
       <div class="pp-how__step-number">1</div>
-      <p class="pp-how__step-heading">Choose Your Theme</p>
-      <p class="pp-how__step-text">From our most-loved collections.</p>
+      <p class="pp-how__step-heading">Choose Your Design</p>
+      <p class="pp-how__step-text">Select a theme from our collection. Don’t see what you like? Let us know in the comments and we’ll see what we can create..</p>
     </div>
     <div>
       <div class="pp-how__step-number">2</div>
       <p class="pp-how__step-heading">Pick Your Package</p>
-      <p class="pp-how__step-text">Three simple options to fit your needs.</p>
+      <p class="pp-how__step-text"> Choose the package that’s right for you.</p>
     </div>
     <div>
       <div class="pp-how__step-number">3</div>
       <p class="pp-how__step-heading">Personalize the Details</p>
-      <p class="pp-how__step-text">Add their name, age, and any extras.</p>
+      <p class="pp-how__step-text"> Provide the name/details and we’ll take care of the rest.</p>
     </div>
     <div>
       <div class="pp-how__step-number">4</div>
-      <p class="pp-how__step-heading">We Create the Magic</p>
-      <p class="pp-how__step-text">You get a beautiful, coordinated party without the stress.</p>
+      <p class="pp-how__step-heading">We Bring It Together</p>
+      <p class="pp-how__step-text">You get a beautiful, coordinated celebration without the stress.</p>
     </div>
   </div>
 </div>
@@ -238,39 +296,39 @@
 <div class="pp-tiers">
   <div class="pp-tiers__header">
     <h2 class="pp-tiers__heading">Three Ways to Party</h2>
-    <p class="pp-tiers__subheading">The same magical theme. Choose the package that's right for you — launch pricing, $15 off regular price.</p>
+    <p class="pp-tiers__subheading">A beautifully coordinated design in every package. Choose the option that's right for you — launch pricing, $15 off regular price.</p>
   </div>
   <div class="pp-tiers__grid">
 
     <div class="pp-tier pp-tier--starter">
       <p class="pp-tier__tag">The Essentials</p>
-      <h3 class="pp-tier__name">Party Starter</h3>
-      <p class="pp-tier__desc">The personalized must-haves for a beautiful birthday.</p>
+      <h3 class="pp-tier__name">Party &ldquo;Starter&rdquo;</h3>
+      <p class="pp-tier__desc">The personalized must-haves for a beautiful celebration.</p>
       <div class="pp-placeholder pp-tier__image">Bundle Photo</div>
       <p class="pp-tier__includes-label">What's included:</p>
       <ul class="pp-tier__list">
         <li><span class="pp-tier__check">✓</span> Digital personalized invitation</li>
-        <li><span class="pp-tier__check">✓</span> Personalized birthday banner</li>
-        <li><span class="pp-tier__check">✓</span> Personalized cake topper</li>
+        <li><span class="pp-tier__check">✓</span> Personalized celebration banner</li>
+        <li><span class="pp-tier__check">✓</span> Personalized cake or dessert topper</li>
         <li><span class="pp-tier__check">✓</span> 12 cupcake toppers</li>
       </ul>
       <div class="pp-tier__pricing">
         <span class="pp-tier__compare">$80 CAD</span><span class="pp-tier__price">$65</span> <span class="pp-tier__price-unit">CAD</span>
         <span class="pp-tier__save">Save $15 for a limited time</span>
       </div>
-      <a href="#order-form" class="pp-tier__btn" data-package-link="Party Starter">Choose Starter</a>
+      <a href="#order-form" class="pp-tier__btn" data-package-link="Party Starter">Choose &ldquo;Starter&rdquo;</a>
     </div>
 
     <div class="pp-tier pp-tier--complete">
       <span class="pp-tier__badge">Most Popular</span>
       <p class="pp-tier__tag">Everything You Need</p>
-      <h3 class="pp-tier__name">Party Complete</h3>
+      <h3 class="pp-tier__name">Party &ldquo;Complete&rdquo;</h3>
       <p class="pp-tier__desc">Take your party to the next level with all the key details, perfectly coordinated.</p>
       <div class="pp-placeholder pp-tier__image">Bundle Photo</div>
-      <p class="pp-tier__includes-label">Everything in Party Starter, plus:</p>
+      <p class="pp-tier__includes-label">Everything in Party &ldquo;Starter&rdquo;, plus:</p>
       <ul class="pp-tier__list">
         <li><span class="pp-tier__check">✓</span> Welcome sign</li>
-        <li><span class="pp-tier__check">✓</span> Personalized party hat</li>
+        <li><span class="pp-tier__check">✓</span> Personalized party accessory</li>
         <li><span class="pp-tier__check">✓</span> 24 table confetti</li>
         <li><span class="pp-tier__check">✓</span> 12 water bottle labels</li>
         <li><span class="pp-tier__check">✓</span> 12 personalized favour stickers</li>
@@ -279,7 +337,7 @@
         <span class="pp-tier__compare">$124 CAD</span><span class="pp-tier__price">$109</span> <span class="pp-tier__price-unit">CAD</span>
         <span class="pp-tier__save">Save $15 for a limited time</span>
       </div>
-      <a href="#order-form" class="pp-tier__btn" data-package-link="Party Complete">Choose Complete</a>
+      <a href="#order-form" class="pp-tier__btn" data-package-link="Party Complete">Choose &ldquo;Complete&rdquo;</a>
     </div>
 
     <div class="pp-tier pp-tier--allout">
@@ -287,7 +345,7 @@
       <h3 class="pp-tier__name">Party All Out</h3>
       <p class="pp-tier__desc">From the dessert table to the favour bags, we've thought of everything.</p>
       <div class="pp-placeholder pp-tier__image">Bundle Photo</div>
-      <p class="pp-tier__includes-label">Everything in Party Complete, plus:</p>
+      <p class="pp-tier__includes-label">Everything in Party &ldquo;Complete&rdquo;, plus:</p>
       <ul class="pp-tier__list">
         <li><span class="pp-tier__check">✓</span> 24 cupcake toppers (instead of 12)</li>
         <li><span class="pp-tier__check">✓</span> 24 water bottle labels (instead of 12)</li>
@@ -311,12 +369,12 @@
     <div class="pp-logistics__item">
       <div class="pp-logistics__icon">🎨</div>
       <p class="pp-logistics__heading">3–5 Business Days</p>
-      <p class="pp-logistics__text">After your order is confirmed and details approved.</p>
+      <p class="pp-logistics__text">After your order is confirmed, please allow 3–5 business days for processing. Need it sooner? <a href="mailto:hello@partyandpresents.com" style="color:#fff;">Send us a message</a> and we'll let you know if we can accommodate your timeline.</p>
     </div>
     <div class="pp-logistics__item">
       <div class="pp-logistics__icon">📍</div>
-      <p class="pp-logistics__heading">Local Pickup in St. John's</p>
-      <p class="pp-logistics__text">Free pickup — or let us know if you'd like delivery instead.</p>
+      <p class="pp-logistics__heading">Free Pickup in St. John's</p>
+      <p class="pp-logistics__text">Free pickup in St. John's. Prefer delivery? Let us know and we'll follow up with the details.</p>
     </div>
     <div class="pp-logistics__item">
       <div class="pp-logistics__icon">✉️</div>
@@ -354,12 +412,12 @@
 
     <div class="pp-field--row">
       <div class="pp-field">
-        <label class="pp-field__label" for="f-childname">Birthday child's name</label>
-        <input type="text" id="f-childname" name="Child's Name" required>
+        <label class="pp-field__label" for="f-celebrant">Celebrant's name</label>
+        <input type="text" id="f-celebrant" name="Celebrant's Name" required>
       </div>
       <div class="pp-field">
-        <label class="pp-field__label" for="f-age">Age they're turning</label>
-        <input type="text" id="f-age" name="Age" required>
+        <label class="pp-field__label" for="f-age">Age or milestone</label>
+        <input type="text" id="f-age" name="Age or Milestone" required>
       </div>
     </div>
 
@@ -370,30 +428,32 @@
     </div>
 
     <div class="pp-field">
-      <label class="pp-field__label">Choose your party theme</label>
+      <label class="pp-field__label">Choose your party design</label>
       <div class="pp-choice-grid" data-radio-group="theme">
-        <label class="pp-choice"><input type="radio" name="Theme" value="One Silly Goose" required><span class="pp-choice__label">One Silly Goose</span></label>
-        <label class="pp-choice"><input type="radio" name="Theme" value="Two Fast"><span class="pp-choice__label">Two Fast</span></label>
-        <label class="pp-choice"><input type="radio" name="Theme" value="Three Rex"><span class="pp-choice__label">Three Rex</span></label>
-        <label class="pp-choice"><input type="radio" name="Theme" value="Four Ever Groovy"><span class="pp-choice__label">Four Ever Groovy</span></label>
-        <label class="pp-choice"><input type="radio" name="Theme" value="Five Is A Vibe"><span class="pp-choice__label">Five Is A Vibe</span></label>
-        <label class="pp-choice"><input type="radio" name="Theme" value="Bow Birthday"><span class="pp-choice__label">Bow Birthday</span></label>
-        <label class="pp-choice"><input type="radio" name="Theme" value="Little Pumpkin"><span class="pp-choice__label">Little Pumpkin</span></label>
-        <label class="pp-choice"><input type="radio" name="Theme" value="Spooky Birthday"><span class="pp-choice__label">Spooky Birthday</span></label>
-        <label class="pp-choice pp-choice--full"><input type="radio" name="Theme" value="Different theme" id="theme-different"><span class="pp-choice__label">I'm looking for a different theme</span></label>
+        <label class="pp-choice"><input type="radio" name="Theme" value="Beary First Birthday Party" required><span class="pp-choice__label">Beary First Birthday Party</span></label>
+        <label class="pp-choice"><input type="radio" name="Theme" value="Building Blocks Party"><span class="pp-choice__label">Building Blocks Party</span></label>
+        <label class="pp-choice"><input type="radio" name="Theme" value="Chugga Chugga Two Two Party"><span class="pp-choice__label">Chugga Chugga Two Two Party</span></label>
+        <label class="pp-choice"><input type="radio" name="Theme" value="Farm Party"><span class="pp-choice__label">Farm Party</span></label>
+        <label class="pp-choice"><input type="radio" name="Theme" value="Racing Party"><span class="pp-choice__label">Racing Party</span></label>
+        <label class="pp-choice"><input type="radio" name="Theme" value="Soccer Party"><span class="pp-choice__label">Soccer Party</span></label>
+        <label class="pp-choice"><input type="radio" name="Theme" value="Superhero Party"><span class="pp-choice__label">Superhero Party</span></label>
+        <label class="pp-choice"><input type="radio" name="Theme" value="Two the Rescue Party"><span class="pp-choice__label">Two the Rescue Party</span></label>
+        <label class="pp-choice"><input type="radio" name="Theme" value="Unicorn Party"><span class="pp-choice__label">Unicorn Party</span></label>
+        <label class="pp-choice"><input type="radio" name="Theme" value="Vintage Plane Party"><span class="pp-choice__label">Vintage Plane Party</span></label>
+        <label class="pp-choice pp-choice--full"><input type="radio" name="Theme" value="Different design" id="theme-different"><span class="pp-choice__label">I'm looking for a different design</span></label>
       </div>
       <div class="pp-conditional" id="theme-different-block">
-        <label class="pp-field__label" for="f-theme-other">Tell us the theme you have in mind</label>
+        <label class="pp-field__label" for="f-theme-other">Tell us the design you have in mind</label>
         <input type="text" id="f-theme-other" name="Requested Theme">
-        <p class="pp-field__hint">We're always adding new themes. If yours isn't currently available, we'll let you know what we can create for your date.</p>
+        <p class="pp-field__hint">We're always adding new designs. If yours isn't currently available, we'll let you know what we can create for your date.</p>
       </div>
     </div>
 
     <div class="pp-field">
       <label class="pp-field__label">Choose your package</label>
       <div class="pp-choice-grid" data-radio-group="package">
-        <label class="pp-choice pp-choice--full"><input type="radio" name="Package" value="Party Starter" required><span class="pp-choice__label">Party Starter</span><span class="pp-choice__desc">Personalized essentials — $65 CAD</span></label>
-        <label class="pp-choice pp-choice--full"><input type="radio" name="Package" value="Party Complete" id="package-complete"><span class="pp-choice__label">Party Complete — Most Popular</span><span class="pp-choice__desc">Coordinated setup — $109 CAD</span></label>
+        <label class="pp-choice pp-choice--full"><input type="radio" name="Package" value="Party Starter" required><span class="pp-choice__label">Party &ldquo;Starter&rdquo;</span><span class="pp-choice__desc">Personalized essentials — $65 CAD</span></label>
+        <label class="pp-choice pp-choice--full"><input type="radio" name="Package" value="Party Complete" id="package-complete"><span class="pp-choice__label">Party &ldquo;Complete&rdquo; — Most Popular</span><span class="pp-choice__desc">Coordinated setup — $109 CAD</span></label>
         <label class="pp-choice pp-choice--full"><input type="radio" name="Package" value="Party All Out" id="package-allout"><span class="pp-choice__label">Party All Out</span><span class="pp-choice__desc">Full party &amp; favour experience — $169 CAD</span></label>
       </div>
       <div class="pp-conditional" id="allout-favours-block">
@@ -442,7 +502,11 @@
         <label class="pp-checkbox"><input type="checkbox" name="Add On" value="Food and dessert table signs" class="addon-item"><span>Food and dessert table signs</span></label>
         <label class="pp-checkbox"><input type="checkbox" name="Add On" value="Personalized party straws" class="addon-item"><span>Personalized party straws</span></label>
         <label class="pp-checkbox"><input type="checkbox" name="Add On" value="Extra favour stickers" class="addon-item"><span>Extra favour stickers</span></label>
-        <label class="pp-checkbox pp-checkbox--full"><input type="checkbox" name="Add On" value="None" id="addon-none"><span>None</span></label>
+        <label class="pp-checkbox pp-checkbox--full"><input type="checkbox" name="Add On" value="Other" id="addon-other"><span>Other</span></label>
+      </div>
+      <div class="pp-conditional" id="addon-other-block">
+        <label class="pp-field__label" for="f-addon-other">Please tell us what other add-on you'd like:</label>
+        <input type="text" id="f-addon-other" name="Other Add-On" disabled>
       </div>
     </div>
 
@@ -471,6 +535,20 @@
 
 <script>
   (function () {
+    // Bundle gallery controls (the gallery remains swipe/scroll friendly without JavaScript)
+    var gallery = document.getElementById('bundle-gallery');
+    document.querySelectorAll('[data-gallery-direction]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        var card = gallery.querySelector('.pp-photos__item');
+        var gap = parseFloat(getComputedStyle(gallery.querySelector('.pp-photos__grid')).gap) || 0;
+        var distance = card ? card.getBoundingClientRect().width + gap : gallery.clientWidth * 0.8;
+        gallery.scrollBy({
+          left: button.dataset.galleryDirection === 'next' ? distance : -distance,
+          behavior: 'smooth'
+        });
+      });
+    });
+
     // Package pre-select from pricing card buttons
     document.querySelectorAll('[data-package-link]').forEach(function (link) {
       link.addEventListener('click', function () {
@@ -519,20 +597,15 @@
       });
     });
 
-    // Add-ons: "None" is exclusive
-    var noneCheckbox = document.getElementById('addon-none');
-    var addonItems = document.querySelectorAll('.addon-item');
-    noneCheckbox.addEventListener('change', function () {
-      if (noneCheckbox.checked) {
-        addonItems.forEach(function (item) { item.checked = false; item.disabled = true; });
-      } else {
-        addonItems.forEach(function (item) { item.disabled = false; });
-      }
-    });
-    addonItems.forEach(function (item) {
-      item.addEventListener('change', function () {
-        if (item.checked) noneCheckbox.checked = false;
-      });
+    // Conditional: other add-on request
+    var addonOther = document.getElementById('addon-other');
+    var addonOtherBlock = document.getElementById('addon-other-block');
+    var addonOtherInput = document.getElementById('f-addon-other');
+    addonOther.addEventListener('change', function () {
+      var show = addonOther.checked;
+      addonOtherBlock.classList.toggle('is-visible', show);
+      addonOtherInput.required = show;
+      addonOtherInput.disabled = !show;
     });
 
     // Form submission
