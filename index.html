@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Personalized Celebration Bundles — Party &amp; Presents</title>
-<link rel="icon" type="image/png" href="assets/Icon.png">
+<link rel="icon" type="image/png" href="assets/optimized/icon.png">
+<link rel="preload" as="image" href="assets/optimized/farm-party-theme-800.webp" imagesrcset="assets/optimized/farm-party-theme-400.webp 400w, assets/optimized/farm-party-theme-800.webp 800w" imagesizes="(max-width: 414px) 82vw, (max-width: 800px) 340px, (max-width: 1148px) calc((100vw - 92px) / 3), 352px" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Quicksand:wght@400;500;600;700&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
@@ -64,7 +65,7 @@
   .pp-photos__viewport::-webkit-scrollbar { display: none; }
   .pp-photos__grid { display: flex; gap: 20px; padding: 2px 2px 16px; }
   .pp-photos__item { flex: 0 0 calc((100% - 40px) / 3); min-width: 0; margin: 0; scroll-snap-align: start; }
-  .pp-photos__image { display: block; width: 100%; aspect-ratio: 1; border-radius: 18px; object-fit: cover; object-position: center; }
+  .pp-photos__image { display: block; width: 100%; height: auto; aspect-ratio: 1; border-radius: 18px; object-fit: cover; object-position: center; }
 
   /* ---------- How it works ---------- */
   .pp-how { background: #F5EFE7; padding: 48px 24px; }
@@ -101,7 +102,7 @@
   .pp-tier--complete .pp-tier__tag { color: var(--complete); }
   .pp-tier--allout .pp-tier__tag { color: var(--allout); }
   .pp-tier__desc { font-family: var(--body-font); font-size: 15px; line-height: 1.55; color: var(--body); margin: 0 0 18px; }
-  .pp-tier__image { display: block; width: 100%; aspect-ratio: 4/3; margin-bottom: 18px; border-radius: 16px; object-fit: cover; object-position: center; }
+  .pp-tier__image { display: block; width: 100%; height: auto; aspect-ratio: 4/3; margin-bottom: 18px; border-radius: 16px; object-fit: cover; object-position: center; }
   .pp-tier__includes-label { font-family: var(--body-font); font-weight: 700; font-size: 14px; color: var(--ink); margin: 0 0 10px; }
   .pp-tier__list { list-style: none; margin: 0 0 20px; padding: 0; flex: 1; }
   .pp-tier__list li { display: flex; align-items: flex-start; gap: 8px; font-family: var(--body-font); font-size: 15px; line-height: 1.5; color: var(--ink); margin-bottom: 8px; }
@@ -184,7 +185,8 @@
   .pp-conditional.is-visible { display: block; }
 
   /* ---------- Theme image preview ---------- */
-  .pp-theme-preview { display: none; margin-top: 12px; }
+  .pp-choice-grid[data-radio-group="theme"] { grid-template-columns: 1fr; }
+  .pp-theme-preview { display: none; }
   .pp-theme-preview.is-visible { display: block; animation: pp-preview-in 0.18s ease; }
   @keyframes pp-preview-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
   .pp-theme-preview__figure { margin: 0; display: flex; align-items: center; gap: 14px; padding: 12px; background: #F5F7F8; border: 1px solid var(--line); border-radius: 14px; }
@@ -284,7 +286,7 @@
 <body>
 
 <div class="pp-header">
-  <img class="pp-header__logo" src="assets/Final%20Logo.png" alt="Party &amp; Presents">
+  <img class="pp-header__logo" src="assets/optimized/logo.webp" width="280" height="95" fetchpriority="high" alt="Party &amp; Presents">
 </div>
 
 <div class="pp-hero">
@@ -310,31 +312,31 @@
     <div class="pp-photos__viewport" id="bundle-gallery" tabindex="0" aria-label="Party bundle gallery">
       <div class="pp-photos__grid">
         <figure class="pp-photos__item">
-          <img class="pp-photos__image" src="assets/gallery/farm-party-theme.jpg" alt="Farm party table setup">
+          <img class="pp-photos__image" src="assets/optimized/farm-party-theme-800.webp" srcset="assets/optimized/farm-party-theme-400.webp 400w, assets/optimized/farm-party-theme-800.webp 800w" sizes="(max-width: 414px) 82vw, (max-width: 800px) 340px, (max-width: 1148px) calc((100vw - 92px) / 3), 352px" alt="Farm party table setup" width="1200" height="1200" loading="eager" decoding="async" fetchpriority="high">
         </figure>
         <figure class="pp-photos__item">
-          <img class="pp-photos__image" src="assets/gallery/unicorn-party-details.png" alt="Unicorn party details">
+          <img class="pp-photos__image" src="assets/optimized/unicorn-party-details-800.webp" srcset="assets/optimized/unicorn-party-details-400.webp 400w, assets/optimized/unicorn-party-details-800.webp 800w" sizes="(max-width: 414px) 82vw, (max-width: 800px) 340px, (max-width: 1148px) calc((100vw - 92px) / 3), 352px" alt="Unicorn party details" width="2000" height="2000" loading="eager" decoding="async">
         </figure>
         <figure class="pp-photos__item">
-          <img class="pp-photos__image" src="assets/gallery/superhero-party-straws.png" alt="Superhero party drink details" loading="lazy">
+          <img class="pp-photos__image" src="assets/optimized/superhero-party-straws-800.webp" srcset="assets/optimized/superhero-party-straws-400.webp 400w, assets/optimized/superhero-party-straws-800.webp 800w" sizes="(max-width: 414px) 82vw, (max-width: 800px) 340px, (max-width: 1148px) calc((100vw - 92px) / 3), 352px" alt="Superhero party drink details" width="1080" height="1350" loading="eager" decoding="async">
         </figure>
         <figure class="pp-photos__item">
-          <img class="pp-photos__image" src="assets/gallery/superhero-party-table.png" alt="Superhero party table setup" loading="lazy">
+          <img class="pp-photos__image" src="assets/optimized/superhero-party-table-800.webp" srcset="assets/optimized/superhero-party-table-400.webp 400w, assets/optimized/superhero-party-table-800.webp 800w" sizes="(max-width: 414px) 82vw, (max-width: 800px) 340px, (max-width: 1148px) calc((100vw - 92px) / 3), 352px" alt="Superhero party table setup" width="2000" height="2000" loading="lazy" decoding="async">
         </figure>
         <figure class="pp-photos__item">
-          <img class="pp-photos__image" src="assets/gallery/soccer-party-table.png" alt="Soccer party table setup" loading="lazy">
+          <img class="pp-photos__image" src="assets/optimized/soccer-party-table-800.webp" srcset="assets/optimized/soccer-party-table-400.webp 400w, assets/optimized/soccer-party-table-800.webp 800w" sizes="(max-width: 414px) 82vw, (max-width: 800px) 340px, (max-width: 1148px) calc((100vw - 92px) / 3), 352px" alt="Soccer party table setup" width="1080" height="1350" loading="lazy" decoding="async">
         </figure>
         <figure class="pp-photos__item">
-          <img class="pp-photos__image" src="assets/gallery/train-party-table.png" alt="Train party table setup" loading="lazy">
+          <img class="pp-photos__image" src="assets/optimized/train-party-table-800.webp" srcset="assets/optimized/train-party-table-400.webp 400w, assets/optimized/train-party-table-800.webp 800w" sizes="(max-width: 414px) 82vw, (max-width: 800px) 340px, (max-width: 1148px) calc((100vw - 92px) / 3), 352px" alt="Train party table setup" width="2000" height="2000" loading="lazy" decoding="async">
         </figure>
         <figure class="pp-photos__item">
-          <img class="pp-photos__image" src="assets/gallery/building-block-party-details.png" alt="Building block party details" loading="lazy">
+          <img class="pp-photos__image" src="assets/optimized/building-block-party-details-800.webp" srcset="assets/optimized/building-block-party-details-400.webp 400w, assets/optimized/building-block-party-details-800.webp 800w" sizes="(max-width: 414px) 82vw, (max-width: 800px) 340px, (max-width: 1148px) calc((100vw - 92px) / 3), 352px" alt="Building block party details" width="2000" height="2000" loading="lazy" decoding="async">
         </figure>
         <figure class="pp-photos__item">
-          <img class="pp-photos__image" src="assets/gallery/racing-party-details.png" alt="Racing party details" loading="lazy">
+          <img class="pp-photos__image" src="assets/optimized/racing-party-details-800.webp" srcset="assets/optimized/racing-party-details-400.webp 400w, assets/optimized/racing-party-details-800.webp 800w" sizes="(max-width: 414px) 82vw, (max-width: 800px) 340px, (max-width: 1148px) calc((100vw - 92px) / 3), 352px" alt="Racing party details" width="1080" height="1350" loading="lazy" decoding="async">
         </figure>
         <figure class="pp-photos__item">
-          <img class="pp-photos__image" src="assets/gallery/one-silly-goose-table-setup.png" alt="One Silly Goose party table setup" loading="lazy">
+          <img class="pp-photos__image" src="assets/optimized/one-silly-goose-table-setup-800.webp" srcset="assets/optimized/one-silly-goose-table-setup-400.webp 400w, assets/optimized/one-silly-goose-table-setup-800.webp 800w" sizes="(max-width: 414px) 82vw, (max-width: 800px) 340px, (max-width: 1148px) calc((100vw - 92px) / 3), 352px" alt="One Silly Goose party table setup" width="2000" height="2000" loading="lazy" decoding="async">
         </figure>
       </div>
     </div>
@@ -378,7 +380,7 @@
       <p class="pp-tier__tag">The Essentials</p>
       <h3 class="pp-tier__name">Party &ldquo;Starter&rdquo;</h3>
       <p class="pp-tier__desc">The personalized must-haves for a beautiful celebration.</p>
-      <img class="pp-tier__image" src="assets/gallery/soccer-party-table.png" alt="Soccer party table setup">
+      <img class="pp-tier__image" src="assets/optimized/soccer-party-table-800.webp" srcset="assets/optimized/soccer-party-table-400.webp 400w, assets/optimized/soccer-party-table-800.webp 800w" sizes="(max-width: 800px) calc(100vw - 104px), (max-width: 1148px) calc((100vw - 256px) / 3), 297px" alt="Soccer party table setup" width="1080" height="1350" loading="lazy" decoding="async">
       <p class="pp-tier__includes-label">What's included:</p>
       <ul class="pp-tier__list">
         <li><span class="pp-tier__check">✓</span> Digital personalized invitation</li>
@@ -398,7 +400,7 @@
       <p class="pp-tier__tag">Everything You Need</p>
       <h3 class="pp-tier__name">Party &ldquo;Complete&rdquo;</h3>
       <p class="pp-tier__desc">Take your party to the next level with all the key details, perfectly coordinated.</p>
-      <img class="pp-tier__image" src="assets/gallery/one-silly-goose-table-setup.png" alt="One Silly Goose party table setup" loading="lazy">
+      <img class="pp-tier__image" src="assets/optimized/one-silly-goose-table-setup-800.webp" srcset="assets/optimized/one-silly-goose-table-setup-400.webp 400w, assets/optimized/one-silly-goose-table-setup-800.webp 800w" sizes="(max-width: 800px) calc(100vw - 104px), (max-width: 1148px) calc((100vw - 256px) / 3), 297px" alt="One Silly Goose party table setup" width="2000" height="2000" loading="lazy" decoding="async">
       <p class="pp-tier__includes-label">Everything in Party &ldquo;Starter&rdquo;, plus:</p>
       <ul class="pp-tier__list">
         <li><span class="pp-tier__check">✓</span> Welcome sign</li>
@@ -418,7 +420,7 @@
       <p class="pp-tier__tag">The Full Experience</p>
       <h3 class="pp-tier__name">Party All Out</h3>
       <p class="pp-tier__desc">From the dessert table to the favour bags, we've thought of everything.</p>
-      <img class="pp-tier__image" src="assets/gallery/vintage-plane-table-setup.png" alt="Vintage airplane party table setup" loading="lazy">
+      <img class="pp-tier__image" src="assets/optimized/vintage-plane-table-setup-800.webp" srcset="assets/optimized/vintage-plane-table-setup-400.webp 400w, assets/optimized/vintage-plane-table-setup-800.webp 800w" sizes="(max-width: 800px) calc(100vw - 104px), (max-width: 1148px) calc((100vw - 256px) / 3), 297px" alt="Vintage airplane party table setup" width="2000" height="2000" loading="lazy" decoding="async">
       <p class="pp-tier__includes-label">Everything in Party &ldquo;Complete&rdquo;, plus:</p>
       <ul class="pp-tier__list">
         <li><span class="pp-tier__check">✓</span> 24 cupcake toppers (instead of 12)</li>
@@ -468,23 +470,23 @@
 
     <div class="pp-review">
       <p class="pp-review__stars">★★★★★</p>
-      <p class="pp-review__quote">&ldquo;These will be great for my son's party!&rdquo;</p>
+      <p class="pp-review__quote">&ldquo;These turned out even better than I expected!!! I uploaded a bunch of different pictures, and they managed to get a different face on every hero that matches the pose PERFECTLY! Plus, they are printed on high quality paper (almost plastic) and will hold up very well in cupcakes! Will definitely be purchasing again!!!!&rdquo;</p>
       <div class="pp-review__footer">
-        <div class="pp-review__avatar">K</div>
+        <div class="pp-review__avatar">H</div>
         <div>
-          <p class="pp-review__name">Kim</p>
-          <p class="pp-review__detail">Chugga Chugga Two Two — Complete Package</p>
+          <p class="pp-review__name">Holly</p>
+          <p class="pp-review__detail">Superhero Bundle - Complete Package</p>
         </div>
       </div>
     </div>
 
     <div class="pp-review">
       <p class="pp-review__stars">★★★★★</p>
-      <p class="pp-review__quote">&ldquo;Easy to work with the seller on whether or not the picture would work!&rdquo;</p>
+      <p class="pp-review__quote">&ldquo;I ordered these for an upcoming birthday party. I was concerned about whether they would arrive on time, but they did. They are SO awesome, and the quality is top notch. Can't say enough good things about the communication with seller - - keeping an eye on the shipping, the tracking, and contacting me to make sure I received the delivery - knowing I needed them for an event. I would absolutely buy from this seller again!&rdquo;</p>
       <div class="pp-review__footer">
-        <div class="pp-review__avatar">E</div>
+        <div class="pp-review__avatar">N</div>
         <div>
-          <p class="pp-review__name">Ellen</p>
+          <p class="pp-review__name">Nancy</p>
           <p class="pp-review__detail">Farm Party — Starter Package</p>
         </div>
       </div>
@@ -492,12 +494,12 @@
 
     <div class="pp-review">
       <p class="pp-review__stars">★★★★★</p>
-      <p class="pp-review__quote">&ldquo;Perfect for my son's birthday party. Excellent quality! Seller was easy to communicate with and very pleased overall! :)&rdquo;</p>
+      <p class="pp-review__quote">&ldquo;Absolutely LOVED these cupcake toppers!! They came out great and were such a hit with everyone at the party! My son thought they were AWESOME! Customer support was on point, quick to respond and made sure I received my order on time for the party! Definitely will use them again in the future!&rdquo;</p>
       <div class="pp-review__footer">
-        <div class="pp-review__avatar">A</div>
+        <div class="pp-review__avatar">E</div>
         <div>
-          <p class="pp-review__name">Ashleigh</p>
-          <p class="pp-review__detail">Building Blocks Party — All Out Package</p>
+          <p class="pp-review__name">Ellen</p>
+          <p class="pp-review__detail">Two the Rescue — All Out Package</p>
         </div>
       </div>
     </div>
@@ -550,24 +552,24 @@
 
     <div class="pp-field">
       <label class="pp-field__label">Choose your party design</label>
-      <p class="pp-field__hint">Tap a design to see a preview photo.</p>
+      <p class="pp-field__hint">Tap a design to reveal its photo directly below. Tap the photo to enlarge.</p>
       <div class="pp-choice-grid" data-radio-group="theme">
-        <label class="pp-choice"><input type="radio" name="Theme" value="Beary First Birthday Party" data-image="assets/gallery/beary-first-birthday-party.jpg" required><span class="pp-choice__label">Beary First Birthday Party</span></label>
-        <label class="pp-choice"><input type="radio" name="Theme" value="Building Blocks Party" data-image="assets/gallery/building-blocks-party-theme.jpg"><span class="pp-choice__label">Building Blocks Party</span></label>
-        <label class="pp-choice"><input type="radio" name="Theme" value="Chugga Chugga Two Two Party" data-image="assets/gallery/train-party-table.png"><span class="pp-choice__label">Chugga Chugga Two Two Party</span></label>
-        <label class="pp-choice"><input type="radio" name="Theme" value="Farm Party" data-image="assets/gallery/farm-party-theme.jpg"><span class="pp-choice__label">Farm Party</span></label>
-        <label class="pp-choice"><input type="radio" name="Theme" value="Racing Party" data-image="assets/gallery/racing-party-theme.jpg"><span class="pp-choice__label">Racing Party</span></label>
-        <label class="pp-choice"><input type="radio" name="Theme" value="Soccer Party" data-image="assets/gallery/soccer-party-table.png"><span class="pp-choice__label">Soccer Party</span></label>
-        <label class="pp-choice"><input type="radio" name="Theme" value="Superhero Party" data-image="assets/gallery/superhero-party-table.png"><span class="pp-choice__label">Superhero Party</span></label>
-        <label class="pp-choice"><input type="radio" name="Theme" value="Two the Rescue Party" data-image="assets/gallery/two-the-rescue-party-theme.jpg"><span class="pp-choice__label">Two the Rescue Party</span></label>
-        <label class="pp-choice"><input type="radio" name="Theme" value="Unicorn Party" data-image="assets/gallery/unicorn-party-theme.jpg"><span class="pp-choice__label">Unicorn Party</span></label>
-        <label class="pp-choice"><input type="radio" name="Theme" value="Vintage Plane Party" data-image="assets/gallery/vintage-plane-table-setup.png"><span class="pp-choice__label">Vintage Plane Party</span></label>
+        <label class="pp-choice"><input type="radio" name="Theme" value="Beary First Birthday Party" data-image="assets/optimized/beary-first-birthday-party-800.webp" data-full-image="assets/optimized/beary-first-birthday-party-1280.webp" required><span class="pp-choice__label">Beary First Birthday Party</span></label>
+        <label class="pp-choice"><input type="radio" name="Theme" value="Building Blocks Party" data-image="assets/optimized/building-blocks-party-theme-800.webp" data-full-image="assets/optimized/building-blocks-party-theme-1280.webp"><span class="pp-choice__label">Building Blocks Party</span></label>
+        <label class="pp-choice"><input type="radio" name="Theme" value="Chugga Chugga Two Two Party" data-image="assets/optimized/train-party-table-800.webp" data-full-image="assets/optimized/train-party-table-1280.webp"><span class="pp-choice__label">Chugga Chugga Two Two Party</span></label>
+        <label class="pp-choice"><input type="radio" name="Theme" value="Farm Party" data-image="assets/optimized/farm-party-theme-800.webp" data-full-image="assets/optimized/farm-party-theme-1280.webp"><span class="pp-choice__label">Farm Party</span></label>
+        <label class="pp-choice"><input type="radio" name="Theme" value="Racing Party" data-image="assets/optimized/racing-party-theme-800.webp" data-full-image="assets/optimized/racing-party-theme-1280.webp"><span class="pp-choice__label">Racing Party</span></label>
+        <label class="pp-choice"><input type="radio" name="Theme" value="Soccer Party" data-image="assets/optimized/soccer-party-table-800.webp" data-full-image="assets/optimized/soccer-party-table-1280.webp"><span class="pp-choice__label">Soccer Party</span></label>
+        <label class="pp-choice"><input type="radio" name="Theme" value="Superhero Party" data-image="assets/optimized/superhero-party-table-800.webp" data-full-image="assets/optimized/superhero-party-table-1280.webp"><span class="pp-choice__label">Superhero Party</span></label>
+        <label class="pp-choice"><input type="radio" name="Theme" value="Two the Rescue Party" data-image="assets/optimized/two-the-rescue-party-theme-800.webp" data-full-image="assets/optimized/two-the-rescue-party-theme-1280.webp"><span class="pp-choice__label">Two the Rescue Party</span></label>
+        <label class="pp-choice"><input type="radio" name="Theme" value="Unicorn Party" data-image="assets/optimized/unicorn-party-theme-800.webp" data-full-image="assets/optimized/unicorn-party-theme-1280.webp"><span class="pp-choice__label">Unicorn Party</span></label>
+        <label class="pp-choice"><input type="radio" name="Theme" value="Vintage Plane Party" data-image="assets/optimized/vintage-plane-table-setup-800.webp" data-full-image="assets/optimized/vintage-plane-table-setup-1280.webp"><span class="pp-choice__label">Vintage Plane Party</span></label>
         <label class="pp-choice pp-choice--full"><input type="radio" name="Theme" value="Different design" id="theme-different"><span class="pp-choice__label">I'm looking for a different design</span></label>
       </div>
 
       <div class="pp-theme-preview" id="themePreview">
         <figure class="pp-theme-preview__figure">
-          <img class="pp-theme-preview__image" id="themePreviewImage" src="" alt="" tabindex="0" role="button" aria-label="View larger photo">
+          <img class="pp-theme-preview__image" id="themePreviewImage" alt="" tabindex="0" role="button" aria-label="View larger photo">
           <p class="pp-theme-preview__caption" id="themePreviewCaption"></p>
         </figure>
       </div>
@@ -665,7 +667,7 @@
 
 <div class="pp-lightbox" id="themeLightbox" role="dialog" aria-modal="true" aria-label="Party design preview">
   <button type="button" class="pp-lightbox__close" id="themeLightboxClose" aria-label="Close preview">&times;</button>
-  <img class="pp-lightbox__image" id="themeLightboxImage" src="" alt="">
+  <img class="pp-lightbox__image" id="themeLightboxImage" alt="">
 </div>
 
 <script>
@@ -728,7 +730,7 @@
       if (e.key === 'Escape') closeLightbox();
     });
     themePreviewImage.addEventListener('click', function () {
-      openLightbox(themePreviewImage.src, themePreviewImage.alt);
+      openLightbox(themePreviewImage.dataset.fullImage || themePreviewImage.src, themePreviewImage.alt);
     });
     themePreviewImage.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') {
@@ -742,9 +744,12 @@
         themePreview.classList.remove('is-visible');
         return;
       }
+      // Keep the shared preview directly after the selected option on every screen size.
+      input.closest('.pp-choice').insertAdjacentElement('afterend', themePreview);
       var imageSrc = input.dataset.image;
       if (imageSrc) {
         themePreviewImage.src = imageSrc;
+        themePreviewImage.dataset.fullImage = input.dataset.fullImage;
         themePreviewImage.alt = input.value + ' preview photo';
         themePreviewImage.style.display = '';
         themePreviewCaption.innerHTML = '<strong>' + input.value + '</strong>Tap the photo to see it full-size.';
